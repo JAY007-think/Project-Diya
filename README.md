@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🔧 DIYA — Intelligent AI-Powered DIY Assistant
 
 > Amazon Nova Hackathon Project
@@ -89,3 +90,6 @@ diya/
 3. Request access to **Amazon Nova Pro** and **Nova Lite** models
 4. Create an IAM user with `AmazonBedrockFullAccess` policy
 5. Generate access keys and paste in `.env`
+=======
+# Project-Diya
+>>>>>>> 5256c5e3c9478637946b6e8871aff2415c9ac114
