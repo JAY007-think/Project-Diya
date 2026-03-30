@@ -1,53 +1,73 @@
-<<<<<<< HEAD
 # 🔧 DIYA — Intelligent AI-Powered DIY Assistant
 
-> Amazon Nova Hackathon Project
+[![Watch the Demo](https://img.youtube.com/vi/lHhN5YxvpjY/0.jpg)](https://www.youtube.com/watch?v=lHhN5YxvpjY)
 
-DIYA uses Amazon Nova's multimodal power to guide users through device repairs via video/image analysis, ensuring safety with real-time alerts and interactive step-by-step instructions.
+> 🎥 Click the image above to watch the demo
+> 🏆 Amazon Nova Hackathon Project
 
 ---
 
-## ⚡ Quick Start (2 Commands)
+## 🚀 Overview
 
-### Step 1 — Add your AWS credentials
+**DIYA** is an AI-powered DIY repair assistant that helps users fix devices using **image/video understanding + real-time guidance**.
 
-Open `.env` file and fill in your AWS keys:
+Built using **Amazon Nova (Bedrock)**, DIYA can:
 
-```
+* 📷 Analyze device images
+* 🛠 Diagnose issues
+* 📋 Generate step-by-step repair instructions
+* ⚠ Provide real-time safety alerts
+* 💬 Answer follow-up questions interactively
+
+---
+
+## ⚡ Quick Start
+
+### 1️⃣ Add AWS Credentials
+
+Create a `.env` file in the root directory:
+
+```env
 AWS_ACCESS_KEY_ID=your_actual_key
 AWS_SECRET_ACCESS_KEY=your_actual_secret
 AWS_REGION=us-east-1
 ```
 
-> Make sure Amazon Bedrock is enabled in your AWS account and Nova Pro model is accessible in us-east-1.
+> ✅ Ensure:
+>
+> * Amazon Bedrock is enabled
+> * Access to **Nova Pro** and **Nova Lite** is granted
+> * Region is set to `us-east-1`
 
-### Step 2 — Run it!
+---
+
+### 2️⃣ Run the App
 
 ```bash
 npm install
 npm run dev
 ```
 
-That's it! Open: **http://localhost:3000**
+🌐 Open: **http://localhost:3000**
 
 ---
 
-## 🏗 Project Structure
+## 🏗️ Project Structure
 
 ```
 diya/
 ├── backend/
-│   └── server.js          # Express + WebSocket + Amazon Nova API
+│   └── server.js              # Express + WebSocket + Nova API
 ├── src/
 │   ├── pages/
-│   │   ├── Landing.jsx    # Landing page
+│   │   ├── Landing.jsx        # Landing page
 │   │   └── RepairSession.jsx  # Main repair interface
 │   ├── components/
 │   │   ├── Nav.jsx
-│   │   ├── VideoPane.jsx  # Image upload + Nova Vision
-│   │   ├── StepsPanel.jsx # Step-by-step repair guide
-│   │   ├── ChatPanel.jsx  # Streaming chat with Nova
-│   │   └── AlertBanner.jsx # Safety alerts
+│   │   ├── VideoPane.jsx      # Image upload + vision analysis
+│   │   ├── StepsPanel.jsx     # Repair steps UI
+│   │   ├── ChatPanel.jsx      # Streaming AI chat
+│   │   └── AlertBanner.jsx    # Safety alerts
 │   ├── styles/
 │   │   └── global.css
 │   ├── App.jsx
@@ -55,41 +75,92 @@ diya/
 ├── index.html
 ├── vite.config.js
 ├── package.json
-└── .env                   # ← Add your AWS keys here
+└── .env
 ```
 
 ---
 
-## 🤖 AI Features
+## 🤖 AI Capabilities
 
-| Feature | Model | Endpoint |
-|---|---|---|
-| Device analysis + repair steps | nova-pro-v1 | `POST /api/analyze` |
-| Streaming chat | nova-lite-v1 | `POST /api/chat/stream` |
-| Quick safety check | nova-lite-v1 | `POST /api/safety-check` |
-| Real-time frame analysis | nova-lite-v1 | WebSocket `/ws` |
+| Feature                           | Model        | Endpoint                 |
+| --------------------------------- | ------------ | ------------------------ |
+| 🔍 Device analysis & repair steps | nova-pro-v1  | `POST /api/analyze`      |
+| 💬 Streaming AI chat              | nova-lite-v1 | `POST /api/chat/stream`  |
+| ⚠ Safety detection                | nova-lite-v1 | `POST /api/safety-check` |
+| 🎥 Real-time frame analysis       | nova-lite-v1 | WebSocket `/ws`          |
 
 ---
 
-## 🛡 How to Use
+## 🛠️ How It Works
 
-1. Go to **http://localhost:3000**
+1. Open **http://localhost:3000**
 2. Click **"Start Repair Session"**
-3. Upload a photo of your broken device
-4. Optionally describe the issue
+3. Upload an image of your device
+4. (Optional) Describe the issue
 5. Click **"Analyze Device"**
-6. DIYA will identify the device, diagnose the issue, and provide step-by-step repair instructions
-7. Follow steps, ask questions in the chat, and mark each step done as you go
+6. Get:
+
+   * Device identification
+   * Issue diagnosis
+   * Step-by-step repair guide
+7. Follow steps, ask questions, and proceed interactively
 
 ---
 
-## AWS Setup
+## 🛡️ Safety First
 
-1. Create an AWS account if you don't have one
-2. Enable **Amazon Bedrock** in `us-east-1`
-3. Request access to **Amazon Nova Pro** and **Nova Lite** models
-4. Create an IAM user with `AmazonBedrockFullAccess` policy
-5. Generate access keys and paste in `.env`
-=======
-# Project-Diya
->>>>>>> 5256c5e3c9478637946b6e8871aff2415c9ac114
+DIYA continuously checks for:
+
+* ⚡ Electrical hazards
+* 🔥 Overheating risks
+* ⚠ Unsafe repair steps
+
+…and alerts users in real time.
+
+---
+
+## ☁️ AWS Setup Guide
+
+1. Create an AWS account
+2. Enable **Amazon Bedrock**
+3. Request access to:
+
+   * Nova Pro
+   * Nova Lite
+4. Create IAM user with:
+
+   ```
+   AmazonBedrockFullAccess
+   ```
+5. Generate access keys → paste in `.env`
+
+---
+
+## 💡 Key Highlights
+
+* ⚡ Real-time AI guidance
+* 🧠 Multimodal understanding (image + text)
+* 🔄 Interactive repair workflow
+* 🛡 Built-in safety intelligence
+* 🌐 Full-stack (React + Node + WebSockets)
+
+---
+
+## 📌 Future Improvements
+
+* 📱 Mobile app support
+* 🧰 Tool detection & suggestions
+* 🎯 AR-based repair guidance
+* 🌍 Multi-language support
+
+---
+
+## 👨‍💻 Author
+
+**Jay Soni**
+
+---
+
+## ⭐ Show Your Support
+
+If you like this project, consider giving it a ⭐ on GitHub!
